@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIViewController+ITSwippedPanel.h"
 
 @interface ITViewController : UIViewController
+
+
+-(IBAction) tapOnLeftSidePanel:(id)sender;
+-(IBAction) tapOnRightSidePanel:(id)sender;
 
 @end

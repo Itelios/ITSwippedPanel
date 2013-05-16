@@ -26,4 +26,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(IBAction) tapOnLeftSidePanel:(id)sender {
+    if([self.rootSidePanel leftSizeIsVisible]) {
+        [self.rootSidePanel hideLeftSideViewController];
+    } else {
+        [self.rootSidePanel showLeftSideViewController];
+    }
+}
+
+-(IBAction) tapOnRightSidePanel:(id)sender {
+    if([self.rootSidePanel rightSizeIsVisible]) {
+        [self.rootSidePanel hideRightSideViewController];
+    } else {
+        [self.rootSidePanel showRightSideViewController];
+    }
+}
+
+
 @end

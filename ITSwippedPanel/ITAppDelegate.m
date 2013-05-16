@@ -7,6 +7,7 @@
 //
 
 #import "ITAppDelegate.h"
+#import "ITSwippedPanel.h"
 
 #import "ITViewController.h"
 
@@ -17,8 +18,28 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.viewController = [[ITViewController alloc] initWithNibName:@"ITViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    self.rootSidePanel = [[ITSwippedPanel alloc] initWithRootViewController:self.viewController];
+    self.window.rootViewController = self.rootSidePanel;
     [self.window makeKeyAndVisible];
+    
+    
+    self.leftSidePanel = [[UIViewController alloc] init];
+    self.leftSidePanel.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    self.leftSidePanel.view.backgroundColor = [UIColor redColor];
+    
+    self.rightSidePanel = [[UIViewController alloc] init];
+    self.rightSidePanel.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    self.rightSidePanel.view.backgroundColor = [UIColor yellowColor];
+    
+    self.rootSidePanel.leftSideViewController = self.leftSidePanel;
+    self.rootSidePanel.rightSideViewController = self.rightSidePanel;
+    
+    self.rootSidePanel.leftHoverIndicator = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    
+    UIButton* rightBtn = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    rightBtn.transform = CGAffineTransformMakeRotation(M_PI);
+    self.rootSidePanel.rightHoverIndicator = rightBtn;
+    
     return YES;
 }
 

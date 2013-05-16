@@ -18,17 +18,19 @@
 		1FE06DC61744C5340031E6AB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE06DC51744C5340031E6AB /* Default-568h@2x.png */; };
 		1FE06DC91744C5340031E6AB /* ITViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE06DC81744C5340031E6AB /* ITViewController.m */; };
 		1FE06DCC1744C5340031E6AB /* ITViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FE06DCA1744C5340031E6AB /* ITViewController.xib */; };
+		1FE06DDD17450D7A0031E6AB /* ITSwippedPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE06DDA17450D750031E6AB /* ITSwippedPanel.m */; };
+		1FE06DDE17450D7A0031E6AB /* UIViewController+ITSwippedPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE06DDC17450D790031E6AB /* UIViewController+ITSwippedPanel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1FE06DAC1744C5330031E6AB /* PoC-LeftRightSidePanel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PoC-LeftRightSidePanel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FE06DAC1744C5330031E6AB /* ITSwippedPanel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITSwippedPanel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE06DAF1744C5330031E6AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1FE06DB11744C5340031E6AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1FE06DB31744C5340031E6AB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		1FE06DB71744C5340031E6AB /* PoC-LeftRightSidePanel-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PoC-LeftRightSidePanel-Info.plist"; sourceTree = "<group>"; };
+		1FE06DB71744C5340031E6AB /* ITSwippedPanel-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ITSwippedPanel-Info.plist"; sourceTree = "<group>"; };
 		1FE06DB91744C5340031E6AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1FE06DBB1744C5340031E6AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1FE06DBD1744C5340031E6AB /* PoC-LeftRightSidePanel-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PoC-LeftRightSidePanel-Prefix.pch"; sourceTree = "<group>"; };
+		1FE06DBD1744C5340031E6AB /* ITSwippedPanel-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ITSwippedPanel-Prefix.pch"; sourceTree = "<group>"; };
 		1FE06DBE1744C5340031E6AB /* ITAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITAppDelegate.h; sourceTree = "<group>"; };
 		1FE06DBF1744C5340031E6AB /* ITAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITAppDelegate.m; sourceTree = "<group>"; };
 		1FE06DC11744C5340031E6AB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -37,6 +39,10 @@
 		1FE06DC71744C5340031E6AB /* ITViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITViewController.h; sourceTree = "<group>"; };
 		1FE06DC81744C5340031E6AB /* ITViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITViewController.m; sourceTree = "<group>"; };
 		1FE06DCB1744C5340031E6AB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ITViewController.xib; sourceTree = "<group>"; };
+		1FE06DD917450D710031E6AB /* ITSwippedPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSwippedPanel.h; sourceTree = "<group>"; };
+		1FE06DDA17450D750031E6AB /* ITSwippedPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSwippedPanel.m; sourceTree = "<group>"; };
+		1FE06DDB17450D760031E6AB /* UIViewController+ITSwippedPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ITSwippedPanel.h"; sourceTree = "<group>"; };
+		1FE06DDC17450D790031E6AB /* UIViewController+ITSwippedPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ITSwippedPanel.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +62,7 @@
 		1FE06DA31744C5330031E6AB = {
 			isa = PBXGroup;
 			children = (
-				1FE06DB51744C5340031E6AB /* PoC-LeftRightSidePanel */,
+				1FE06DB51744C5340031E6AB /* ITSwippedPanel */,
 				1FE06DAE1744C5330031E6AB /* Frameworks */,
 				1FE06DAD1744C5330031E6AB /* Products */,
 			);
@@ -65,7 +71,7 @@
 		1FE06DAD1744C5330031E6AB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1FE06DAC1744C5330031E6AB /* PoC-LeftRightSidePanel.app */,
+				1FE06DAC1744C5330031E6AB /* ITSwippedPanel.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,9 +86,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1FE06DB51744C5340031E6AB /* PoC-LeftRightSidePanel */ = {
+		1FE06DB51744C5340031E6AB /* ITSwippedPanel */ = {
 			isa = PBXGroup;
 			children = (
+				1FE06DD817450D710031E6AB /* ITSwippedPanel */,
 				1FE06DBE1744C5340031E6AB /* ITAppDelegate.h */,
 				1FE06DBF1744C5340031E6AB /* ITAppDelegate.m */,
 				1FE06DC71744C5340031E6AB /* ITViewController.h */,
@@ -90,16 +97,16 @@
 				1FE06DCA1744C5340031E6AB /* ITViewController.xib */,
 				1FE06DB61744C5340031E6AB /* Supporting Files */,
 			);
-			path = "PoC-LeftRightSidePanel";
+			path = ITSwippedPanel;
 			sourceTree = "<group>";
 		};
 		1FE06DB61744C5340031E6AB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1FE06DB71744C5340031E6AB /* PoC-LeftRightSidePanel-Info.plist */,
+				1FE06DB71744C5340031E6AB /* ITSwippedPanel-Info.plist */,
 				1FE06DB81744C5340031E6AB /* InfoPlist.strings */,
 				1FE06DBB1744C5340031E6AB /* main.m */,
-				1FE06DBD1744C5340031E6AB /* PoC-LeftRightSidePanel-Prefix.pch */,
+				1FE06DBD1744C5340031E6AB /* ITSwippedPanel-Prefix.pch */,
 				1FE06DC11744C5340031E6AB /* Default.png */,
 				1FE06DC31744C5340031E6AB /* Default@2x.png */,
 				1FE06DC51744C5340031E6AB /* Default-568h@2x.png */,
@@ -107,12 +114,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		1FE06DD817450D710031E6AB /* ITSwippedPanel */ = {
+			isa = PBXGroup;
+			children = (
+				1FE06DD917450D710031E6AB /* ITSwippedPanel.h */,
+				1FE06DDA17450D750031E6AB /* ITSwippedPanel.m */,
+				1FE06DDB17450D760031E6AB /* UIViewController+ITSwippedPanel.h */,
+				1FE06DDC17450D790031E6AB /* UIViewController+ITSwippedPanel.m */,
+			);
+			path = ITSwippedPanel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1FE06DAB1744C5330031E6AB /* PoC-LeftRightSidePanel */ = {
+		1FE06DAB1744C5330031E6AB /* ITSwippedPanel */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1FE06DCF1744C5340031E6AB /* Build configuration list for PBXNativeTarget "PoC-LeftRightSidePanel" */;
+			buildConfigurationList = 1FE06DCF1744C5340031E6AB /* Build configuration list for PBXNativeTarget "ITSwippedPanel" */;
 			buildPhases = (
 				1FE06DA81744C5330031E6AB /* Sources */,
 				1FE06DA91744C5330031E6AB /* Frameworks */,
@@ -122,9 +140,9 @@
 			);
 			dependencies = (
 			);
-			name = "PoC-LeftRightSidePanel";
+			name = ITSwippedPanel;
 			productName = "PoC-LeftRightSidePanel";
-			productReference = 1FE06DAC1744C5330031E6AB /* PoC-LeftRightSidePanel.app */;
+			productReference = 1FE06DAC1744C5330031E6AB /* ITSwippedPanel.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -137,7 +155,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Itelios;
 			};
-			buildConfigurationList = 1FE06DA71744C5330031E6AB /* Build configuration list for PBXProject "PoC-LeftRightSidePanel" */;
+			buildConfigurationList = 1FE06DA71744C5330031E6AB /* Build configuration list for PBXProject "ITSwippedPanel" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -149,7 +167,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1FE06DAB1744C5330031E6AB /* PoC-LeftRightSidePanel */,
+				1FE06DAB1744C5330031E6AB /* ITSwippedPanel */,
 			);
 		};
 /* End PBXProject section */
@@ -177,6 +195,8 @@
 				1FE06DBC1744C5340031E6AB /* main.m in Sources */,
 				1FE06DC01744C5340031E6AB /* ITAppDelegate.m in Sources */,
 				1FE06DC91744C5340031E6AB /* ITViewController.m in Sources */,
+				1FE06DDD17450D7A0031E6AB /* ITSwippedPanel.m in Sources */,
+				1FE06DDE17450D7A0031E6AB /* UIViewController+ITSwippedPanel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,10 +283,12 @@
 		1FE06DD01744C5340031E6AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vincent Saluzzo (P3VPUF7EK9)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PoC-LeftRightSidePanel/PoC-LeftRightSidePanel-Prefix.pch";
-				INFOPLIST_FILE = "PoC-LeftRightSidePanel/PoC-LeftRightSidePanel-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "ITSwippedPanel/ITSwippedPanel-Prefix.pch";
+				INFOPLIST_FILE = "ITSwippedPanel/ITSwippedPanel-Info.plist";
+				PRODUCT_NAME = ITSwippedPanel;
+				PROVISIONING_PROFILE = "9008D1F7-254E-4262-8A06-819CD3D02455";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -274,10 +296,12 @@
 		1FE06DD11744C5340031E6AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vincent Saluzzo (P3VPUF7EK9)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PoC-LeftRightSidePanel/PoC-LeftRightSidePanel-Prefix.pch";
-				INFOPLIST_FILE = "PoC-LeftRightSidePanel/PoC-LeftRightSidePanel-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "ITSwippedPanel/ITSwippedPanel-Prefix.pch";
+				INFOPLIST_FILE = "ITSwippedPanel/ITSwippedPanel-Info.plist";
+				PRODUCT_NAME = ITSwippedPanel;
+				PROVISIONING_PROFILE = "9008D1F7-254E-4262-8A06-819CD3D02455";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -285,7 +309,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1FE06DA71744C5330031E6AB /* Build configuration list for PBXProject "PoC-LeftRightSidePanel" */ = {
+		1FE06DA71744C5330031E6AB /* Build configuration list for PBXProject "ITSwippedPanel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FE06DCD1744C5340031E6AB /* Debug */,
@@ -294,13 +318,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1FE06DCF1744C5340031E6AB /* Build configuration list for PBXNativeTarget "PoC-LeftRightSidePanel" */ = {
+		1FE06DCF1744C5340031E6AB /* Build configuration list for PBXNativeTarget "ITSwippedPanel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FE06DD01744C5340031E6AB /* Debug */,
 				1FE06DD11744C5340031E6AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

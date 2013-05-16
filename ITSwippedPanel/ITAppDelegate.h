@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class ITSwippedPanel;
 @class ITViewController;
 
 @interface ITAppDelegate : UIResponder <UIApplicationDelegate>
@@ -16,4 +17,8 @@
 
 @property (strong, nonatomic) ITViewController *viewController;
 
+@property (nonatomic, retain) UIViewController* leftSidePanel;
+@property (nonatomic, retain) UIViewController* rightSidePanel;
+
+@property (nonatomic, retain) ITSwippedPanel* rootSidePanel;
 @end

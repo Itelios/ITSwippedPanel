@@ -57,6 +57,8 @@ typedef NS_ENUM(NSUInteger, ITLeftRightSidePanelIndicatorPosition) {
 
 @property (nonatomic, readonly) NSMutableArray* delegates;
 
+@property (nonatomic, assign) BOOL handleSwipeGesture;
+
 -(BOOL) leftSizeIsVisible;
 -(BOOL) rightSizeIsVisible;
 

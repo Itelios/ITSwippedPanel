@@ -9,13 +9,15 @@
 #import "UIViewController+ITSwippedPanel.h"
 #import <objc/runtime.h>
 
-static void *RootSidePanelResultKey;
+static char RootSidePanelResultKey;
+//static void *RootSidePanelResultKey;
 
 @implementation UIViewController (ITSwippedPanel)
 
 
+
 -(void) setRootSidePanel:(ITSwippedPanel *)rootSidePanel {
-    objc_setAssociatedObject(self, &RootSidePanelResultKey, rootSidePanel, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &RootSidePanelResultKey, rootSidePanel, OBJC_ASSOCIATION_RETAIN);
 }
 
 -(ITSwippedPanel*) rootSidePanel {

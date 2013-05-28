@@ -40,7 +40,7 @@
         self.mainViewController = rootViewController;
         self.mainViewController.rootSidePanel = self;
         
-        self.handleSwipeGesture = YES;
+        self.handleSwipeGesture = self.handleSwipeGestureLeftPanel = self.handleSwipeGestureRightPanel = YES;
         
         [self addChildViewController:self.mainViewController];
         [self.mainViewController removeFromParentViewController];
@@ -359,19 +359,19 @@
         if(((UISwipeGestureRecognizer*)gestureRecognizer).direction == UISwipeGestureRecognizerDirectionLeft ) {
             // right
             if([self leftSizeIsVisible]) {
-                [self hideLeftSideViewController];
+                if(self.handleSwipeGestureLeftPanel) [self hideLeftSideViewController];
             } else {
                 if(![self rightSizeIsVisible]) {
-                    [self showRightSideViewController];
+                    if(self.handleSwipeGestureRightPanel) [self showRightSideViewController];
                 }
             }
         } else if( ((UISwipeGestureRecognizer*)gestureRecognizer).direction == UISwipeGestureRecognizerDirectionRight ) {
             // left
             if([self rightSizeIsVisible]) {
-                [self hideRightSideViewController];
+                if(self.handleSwipeGestureRightPanel) [self hideRightSideViewController];
             } else {
                 if(![self leftSizeIsVisible]) {
-                    [self showLeftSideViewController];
+                    if(self.handleSwipeGestureLeftPanel) [self showLeftSideViewController];
                 }
             }
         }

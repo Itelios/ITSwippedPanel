@@ -60,6 +60,7 @@ typedef NS_ENUM(NSUInteger, ITLeftRightSidePanelIndicatorPosition) {
 @property (nonatomic, assign) BOOL handleSwipeGesture;
 @property (nonatomic, assign) BOOL handleSwipeGestureLeftPanel;
 @property (nonatomic, assign) BOOL handleSwipeGestureRightPanel;
+@property (nonatomic, assign) BOOL handleTapOnMainViewToHideSidePanel;
 
 -(BOOL) leftSizeIsVisible;
 -(BOOL) rightSizeIsVisible;

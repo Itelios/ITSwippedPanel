@@ -15,12 +15,15 @@
 @property (nonatomic, retain) UISwipeGestureRecognizer* rightSwipeGestureRecognizer;
 @property (nonatomic, retain) UITapGestureRecognizer* leftTapGestureRecognizer;
 @property (nonatomic, retain) UITapGestureRecognizer* rightTapGestureRecognizer;
+@property (nonatomic, retain) UITapGestureRecognizer* mainTapGestureRecognizer;
 
 -(void) callSelectorOnDelegates:(SEL)selector;
 
 
 -(void) handleSwipe:(UIGestureRecognizer*)gestureRecognizer;
 -(void) handleTap:(UIGestureRecognizer*)gestureRecognizer;
+-(void) handleTapTap:(UIGestureRecognizer*)gestureRecognizer;
+
 
 @end
 
@@ -40,7 +43,7 @@
         self.mainViewController = rootViewController;
         self.mainViewController.rootSidePanel = self;
         
-        self.handleSwipeGesture = self.handleSwipeGestureLeftPanel = self.handleSwipeGestureRightPanel = YES;
+        self.handleSwipeGesture = self.handleSwipeGestureLeftPanel = self.handleSwipeGestureRightPanel = self.handleTapOnMainViewToHideSidePanel = YES;
         
         [self addChildViewController:self.mainViewController];
         [self.mainViewController removeFromParentViewController];
@@ -163,6 +166,7 @@
         [self addChildViewController:self.leftSideViewController];
         [self.view addSubview:self.leftSideViewController.view];
         
+        [self addTapHandlerOnMainViewToHideSidePanel];
         [UIView animateWithDuration:self.animationTime animations:^() {
             CGRect rootFrame = self.mainViewController.view.frame;
             rootFrame.origin.x = self.leftSideWidth;
@@ -205,6 +209,7 @@
         [self addChildViewController:self.rightSideViewController];
         [self.view addSubview:self.rightSideViewController.view];
         
+        [self addTapHandlerOnMainViewToHideSidePanel];
         [UIView animateWithDuration:self.animationTime animations:^() {
             CGRect rootFrame = self.mainViewController.view.frame;
             rootFrame.origin.x = -self.rightSideWidth;
@@ -239,7 +244,7 @@
         
         CGRect leftFrame = self.leftSideViewController.view.frame;
         leftFrame.origin.x = -self.leftSideWidth;
-        
+        [self deleteTapHandlerOnMainViewToHideSidePanel];
         [UIView animateWithDuration:self.animationTime animations:^() {
             
             self.mainViewController.view.frame = self.view.bounds;
@@ -277,6 +282,7 @@
         CGRect rightFrame = self.rightSideViewController.view.frame;
         rightFrame.origin.x = self.view.bounds.size.width;
         
+        [self deleteTapHandlerOnMainViewToHideSidePanel];
         [UIView animateWithDuration:self.animationTime animations:^() {
             
             self.mainViewController.view.frame = self.view.bounds;
@@ -341,6 +347,21 @@
 }
 
 
+-(void) addTapHandlerOnMainViewToHideSidePanel {
+    if(!self.handleTapOnMainViewToHideSidePanel) return;
+    if(self.mainTapGestureRecognizer == nil) {
+        self.mainTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapTap:)];
+        self.mainTapGestureRecognizer.numberOfTapsRequired = 1;
+        self.mainTapGestureRecognizer.numberOfTouchesRequired = 1;
+    }
+    [self.mainViewController.view addGestureRecognizer:self.mainTapGestureRecognizer];
+}
+
+-(void) deleteTapHandlerOnMainViewToHideSidePanel {
+    if(!self.handleTapOnMainViewToHideSidePanel) return;
+    [self.mainViewController.view removeGestureRecognizer:self.mainTapGestureRecognizer];
+}
+
 
 #pragma mark - Private methods
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
@@ -396,4 +417,11 @@
     }
 }
 
+-(void) handleTapTap:(UIGestureRecognizer *)gestureRecognizer {
+    if([self leftSizeIsVisible]) {
+        [self hideLeftSideViewController];
+    } else if([self rightSizeIsVisible]) {
+        [self hideRightSideViewController];
+    }
+}
 @end

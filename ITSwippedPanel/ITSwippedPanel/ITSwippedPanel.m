@@ -238,7 +238,7 @@
 }
 
 -(void) hideLeftSideViewController {
-    if(self.leftSideViewController) {
+    if(self.leftSideViewController && self.leftSizeIsVisible) {
         
         [self callSelectorOnDelegates:@selector(leftRightSidePanelwillHideLeftPanel:)];
         
@@ -275,7 +275,7 @@
 }
 
 -(void) hideRightSideViewController {
-    if(self.rightSideViewController) {
+    if(self.rightSideViewController && self.rightSizeIsVisible) {
         
         [self callSelectorOnDelegates:@selector(leftRightSidePanelwillHideRightPanel:)];
         

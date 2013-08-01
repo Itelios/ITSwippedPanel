@@ -354,12 +354,20 @@
         self.mainTapGestureRecognizer.numberOfTapsRequired = 1;
         self.mainTapGestureRecognizer.numberOfTouchesRequired = 1;
     }
-    [self.mainViewController.view addGestureRecognizer:self.mainTapGestureRecognizer];
+    UIView* mask = [[UIView alloc] initWithFrame:self.mainViewController.view.bounds];
+    mask.backgroundColor = [UIColor clearColor];
+    [mask addGestureRecognizer:self.mainTapGestureRecognizer];
+    [self.mainViewController.view addSubview:mask];
+    [self.mainViewController.view bringSubviewToFront:mask];
+//    [self.mainViewController.view addGestureRecognizer:self.mainTapGestureRecognizer];
 }
 
 -(void) deleteTapHandlerOnMainViewToHideSidePanel {
     if(!self.handleTapOnMainViewToHideSidePanel) return;
-    [self.mainViewController.view removeGestureRecognizer:self.mainTapGestureRecognizer];
+    UIView* mask = self.mainViewController.view.subviews[self.mainViewController.view.subviews.count-1];
+    [mask removeFromSuperview];
+    [mask removeGestureRecognizer:self.mainTapGestureRecognizer];
+//    [self.mainViewController.view removeGestureRecognizer:self.mainTapGestureRecognizer];
 }
 
 

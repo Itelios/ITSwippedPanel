@@ -32,38 +32,55 @@
 -(id) initWithRootViewController:(UIViewController *)rootViewController {
     self = [super init];
     if(self) {
-        
-        _delegates = [NSMutableArray array];
-        
-        self.rightSideWidth = self.leftSideWidth = DEFAULT_PANEL_WIDTH;
-        self.animationTime = DEFAULT_ANIMATION_TIME;
-        
-        self.leftHoverIndicatorPosition = self.rightHoverIndicatorPosition = ITLeftRightSidePanelIndicatorPositionMiddle;
-        
-        self.mainViewController = rootViewController;
-        self.mainViewController.rootSidePanel = self;
-        
-        self.handleSwipeGesture = self.handleSwipeGestureLeftPanel = self.handleSwipeGestureRightPanel = self.handleTapOnMainViewToHideSidePanel = YES;
-        
-        [self addChildViewController:self.mainViewController];
-        [self.mainViewController removeFromParentViewController];
-        [self.view addSubview:self.mainViewController.view];
-        
-        self.mainViewController.view.frame = self.view.bounds;
-        
-        self.leftSwipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-        self.rightSwipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
-        self.leftSwipeGestureRecognizer.numberOfTouchesRequired = self.rightSwipeGestureRecognizer.numberOfTouchesRequired = 2;
-        self.rightSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
-        self.leftSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
-        
-        self.leftTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-        self.rightTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-        
-        self.leftTapGestureRecognizer.numberOfTouchesRequired = self.rightTapGestureRecognizer.numberOfTouchesRequired = 1;
-        self.leftTapGestureRecognizer.numberOfTapsRequired = self.rightTapGestureRecognizer.numberOfTapsRequired = 1;
+//        [self initialization];
     }
     return self;
+}
+
+-(id) initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if(self) {
+//        [self initialization];
+    }
+    return self;
+}
+
+-(void) initialization {
+    _delegates = [NSMutableArray array];
+    
+    self.rightSideWidth = self.leftSideWidth = DEFAULT_PANEL_WIDTH;
+    self.animationTime = DEFAULT_ANIMATION_TIME;
+    
+    self.leftHoverIndicatorPosition = self.rightHoverIndicatorPosition = ITLeftRightSidePanelIndicatorPositionMiddle;
+    
+    self.mainViewController.rootSidePanel = self;
+
+
+    self.handleSwipeGesture = self.handleSwipeGestureLeftPanel = self.handleSwipeGestureRightPanel = self.handleTapOnMainViewToHideSidePanel = YES;
+
+    [self addChildViewController:self.mainViewController];
+    [self.mainViewController removeFromParentViewController];
+    [self.view addSubview:self.mainViewController.view];
+    self.mainViewController.view.frame = self.view.bounds;
+
+    
+    self.leftSwipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    self.rightSwipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    self.leftSwipeGestureRecognizer.numberOfTouchesRequired = self.rightSwipeGestureRecognizer.numberOfTouchesRequired = 2;
+    self.rightSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    self.leftSwipeGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    
+    self.leftTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    self.rightTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    
+    self.leftTapGestureRecognizer.numberOfTouchesRequired = self.rightTapGestureRecognizer.numberOfTouchesRequired = 1;
+    self.leftTapGestureRecognizer.numberOfTapsRequired = self.rightTapGestureRecognizer.numberOfTapsRequired = 1;
+}
+
+
+-(void) viewDidLoad {
+    [super viewDidLoad];
+    [self initialization];
 }
 
 -(void) viewDidAppear:(BOOL)animated {
@@ -129,9 +146,11 @@
         
         [self.rightHoverIndicator addGestureRecognizer:self.rightTapGestureRecognizer];
     }
+    if(self.leftSwipeGestureRecognizer)
+        [self.view addGestureRecognizer:self.leftSwipeGestureRecognizer];
     
-    [self.view addGestureRecognizer:self.leftSwipeGestureRecognizer];
-    [self.view addGestureRecognizer:self.rightSwipeGestureRecognizer];
+    if(self.rightSwipeGestureRecognizer)
+        [self.view addGestureRecognizer:self.rightSwipeGestureRecognizer];
 }
 
 -(void) setLeftSideViewController:(UIViewController *)leftSideViewController {
